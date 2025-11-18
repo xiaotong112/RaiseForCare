@@ -49,7 +49,7 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         ".btn-primary": {
-          "@apply text-white font-bold rounded-2xl py-2": "",
+          "@apply text-white font-bold rounded-2xl py-4": "",
           "background-image":
             "linear-gradient(90deg, #FF9D8F 0%, #F4B9A9 100%)",
           "box-shadow": "none",

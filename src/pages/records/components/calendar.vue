@@ -1,16 +1,18 @@
 <template>
-  <div class="calendar">
+  <div class="border-card mb-4">
     <header>
-      <button @click="prevMonth">Previous</button>
-      <h2>{{ monthYear }}</h2>
-      <button @click="nextMonth">Next</button>
+      <h2 class="flex items-center w-full justify-center font-bold">
+        {{ monthYear }}
+      </h2>
     </header>
-    <div class="days">
-      <div class="day" v-for="day in days" :key="day">{{ day }}</div>
+    <div class="grid grid-cols-7 gap-2 text-center">
+      <div class="p-3 text-center" v-for="day in days" :key="day">
+        {{ day }}
+      </div>
     </div>
-    <div class="dates">
+    <div class="grid grid-cols-7 gap-2 text-center">
       <div
-        class="date"
+        class="p-2 text-center date rounded-lg"
         v-for="date in monthDates"
         :key="date"
         @click="selectDate(date)"
@@ -63,7 +65,7 @@ export default {
     },
     selectDate(date) {
       if (date) {
-        alert(`Selected date: ${date}`);
+        console.log(`Selected date: ${date} ${this.monthYear}`);
       }
     },
   },
@@ -71,27 +73,9 @@ export default {
 </script>
 
 <style scoped>
-.calendar {
-  width: 300px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-.days,
-.dates {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-.day,
-.date {
-  padding: 10px;
-  text-align: center;
-}
 .date:hover {
-  background-color: #f0f0f0;
+  background-color: #ff9d8f;
+  color: white;
   cursor: pointer;
 }
 </style>
