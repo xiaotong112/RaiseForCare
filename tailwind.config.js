@@ -16,6 +16,10 @@ module.exports = {
       gray: "#8492a6",
       "gray-light": "#d3dce6",
       background: "#FFFFFF",
+      white: "#FFFFFF",
+      black: "#000000",
+      text: "#252525",
+      border: "#E6E6E6",
       focus: "#4F57FF",
       primary: {
         DEFAULT: "#FF9D8F",
@@ -45,10 +49,22 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         ".btn-primary": {
-          "@apply bg-blue text-[#fff] font-bold rounded": "",
-          "&:hover": {
-            "@apply bg-blue-light": "",
-          },
+          "@apply text-white font-bold rounded-2xl py-2": "",
+          "background-image":
+            "linear-gradient(90deg, #FF9D8F 0%, #F4B9A9 100%)",
+          "box-shadow": "none",
+          border: "0",
+          cursor: "pointer",
+        },
+        ".btn-primary:hover": {
+          filter: "brightness(0.98)",
+        },
+        ".border-card": {
+          "@apply border-2 bg-white rounded-2xl p-4": "",
+        },
+        ".bg-gradient-horizontal": {
+          "background-image":
+            "linear-gradient(90deg, #FF9D8F 0%, #F4B9A9 100%)",
         },
       });
     },
@@ -56,6 +72,6 @@ module.exports = {
   // ...
   corePlugins: {
     // 小程序不需要 preflight，因为这主要是给 h5 的，如果你要同时开发小程序和 h5 端，你应该使用环境变量来控制它
-    preflight: false,
+    preflight: true,
   },
 };

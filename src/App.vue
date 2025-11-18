@@ -16,8 +16,9 @@ export default {
 @use "tailwindcss/base";
 @use "tailwindcss/utilities";
 @use "tailwindcss/components";
+
 .container {
-  @apply flex flex-col items-center justify-center h-full;
+  @apply flex flex-col items-center justify-center h-full w-full p-4;
 }
 
 page {

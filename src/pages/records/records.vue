@@ -1,27 +1,13 @@
 <template>
-	<view class="records-container">
-		<text>记录</text>
-	</view>
+  <view class="container">
+    <calendar />
+    <view class="border-card w-full"> 111q11</view>
+    <button class="btn-primary w-full mt-4">点1q1击111我</button>
+  </view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				
-			};
-		}
-	}
+<script setup>
+import calendar from "./components/calendar.vue";
 </script>
 
-<style lang="scss" scoped>
-	.records-container {
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 50rpx;
-		color: #333;
-	}
-</style>
+<style lang="scss" scoped></style>

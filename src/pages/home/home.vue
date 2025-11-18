@@ -1,14 +1,11 @@
 <template>
-  <view class="container">
-    <text class="text-primary">首页</text>
-    <img
-      src="../../static/images/中餐.png"
-      alt="Home Banner"
-      class="mt-4 w-full rounded-lg shadow-lg"
-    />
-  </view>
+  <!-- <border-card> -->
+  <text class="text-blue border border-gray-light">首页1111111111</text>
+  <!-- </border-card> -->
 </template>
 
-<script setup></script>
+<script setup>
+// import BorderCard from "../components/ui/BorderCard.vue";
+</script>
 
-<style lang="scss" scoped></style>
+<style></style>

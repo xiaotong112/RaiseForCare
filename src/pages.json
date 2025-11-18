@@ -76,5 +76,18 @@
         "selectedIconPath": "/static/images/我的选中.png"
       }
     ]
-  }
+  },
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "pages": [
+        {
+          "path": "test/test",
+          "style": {
+            "navigationBarTitleText": "ces"
+          }
+        }
+      ]
+    }
+  ]
 }
