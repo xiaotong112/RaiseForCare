@@ -28,14 +28,14 @@
     {
       "path": "pages/profile/personalInfo",
       "style": {
-        "navigationBarTitleText": "消息编辑",
+        "navigationBarTitleText": "",
         "navigationBarBackgroundColor": "#FFF5F0"
       }
     },
     {
       "path": "pages/profile/childInfo",
       "style": {
-        "navigationBarTitleText": "我的孩子",
+        "navigationBarTitleText": "",
         "navigationBarBackgroundColor": "#FFF5F0"
       }
     },
@@ -54,7 +54,7 @@
     {
       "path": "pages/collectData/collectData",
       "style": {
-        "navigationBarTitleText": "详情"
+        "navigationBarTitleText": ""
       }
     }
   ],

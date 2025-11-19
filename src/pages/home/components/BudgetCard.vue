@@ -2,18 +2,18 @@
 	<view class="bg-gradient-to-r from-[#FFB4AA] to-[#FF9D8F] rounded-[24rpx] p-[32rpx] relative overflow-hidden w-full">
 		<!-- 金额显示 -->
 		<view class="mb-[24rpx] flex items-center ">
-			<text class="text-[24rpx] text-white/90 block mb-[8rpx]">¥</text>
+			<text class="text-[56rpx] text-white/90 block">¥</text>
 			<text class="text-[56rpx] font-bold text-white">{{ currentAmount }}</text>
 			<text class="text-[24rpx] text-white/90 ml-[16rpx]">当前存款</text>
 		</view>
 
 		<!-- 进度卡片 -->
-		<view class="bg-white rounded-[16rpx] p-[24rpx]">
-			<view class="flex justify-between items-center mb-[12rpx]">
+		<view class="bg-white rounded-[16rpx] p-[12rpx] flex flex-col justify-start gap-[24rpx]">
+			<view class="flex justify-between items-center ">
 				<text class="text-[24rpx] text-[#666]">{{ timeRemaining }}</text>
 				<text class="text-[24rpx] text-primary font-semibold">{{ progressPercent }}%</text>
 			</view>
-			<view class="w-full h-[12rpx] bg-[#F5F5F5] rounded-full overflow-hidden mb-[12rpx]">
+			<view class="w-full h-[24rpx] bg-[#F5F5F5] rounded-full overflow-hidden">
 				<view class="h-full bg-primary rounded-full" :style="`width: ${progressPercent}%`"></view>
 			</view>
 			<view class="text-right">

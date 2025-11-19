@@ -64,7 +64,7 @@
 		</view>
 
 		<view class="flex justify-between gap-[32rpx] mt-[60rpx]">
-			<button class="flex-1 h-[88rpx] bg-[#FFF5F0] rounded-[44rpx] text-[#FF5733] text-[32rpx] font-semibold flex items-center justify-center border-none" @click="cancel">
+			<button class="flex-1 h-[88rpx] bg-[#fee8dd] rounded-[44rpx] text-[#FF5733] text-[32rpx] font-semibold flex items-center justify-center border-none" @click="cancel">
 				取消
 			</button>
 			<button class="flex-1 h-[88rpx] bg-[#FF5733] rounded-[44rpx] text-white text-[32rpx] font-semibold flex items-center justify-center border-none" @click="save">

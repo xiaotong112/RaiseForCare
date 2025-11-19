@@ -1,6 +1,6 @@
 <template>
 	<view class="bg-[#FFFFFF] rounded-[24rpx] p-[32rpx] w-full">
-		<view class="flex items-center mb-[24rpx]">
+		<view class="flex items-center mb-[12rpx]">
         <view class="flex flex-col items-center gap-[20rpx]">
             <image class="w-[100rpx] h-[100rpx] rounded-full mr-[20rpx] " 
 				:src="avatar" 
@@ -24,7 +24,7 @@
                 <text class="text-[24rpx] text-[#999]">成长进度</text>
                 <text class="text-[24rpx] text-[#999]">距离上学还有 {{ daysLeft }} 天</text>
             </view>
-            <view class="w-full h-[8rpx] bg-[#F5F5F5] rounded-full overflow-hidden mt-[12rpx]">
+            <view class="w-full h-[18rpx] bg-[#F5F5F5] rounded-full overflow-hidden mt-[24rpx]">
                 <view 
                     class="h-full rounded-full" 
                     :class="progressClass"

@@ -52,7 +52,7 @@ import ChartCard from './components/ChartCard.vue'
 const budgetData = ref({
 	currentAmount: '86,526.88',
 	targetAmount: '86,526.88',
-	timeRemaining: '距离该伙伴制15年28天',
+	timeRemaining: '距离退休还有一万年',
 	progressPercent: 9
 })
 
