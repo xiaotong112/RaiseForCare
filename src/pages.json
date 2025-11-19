@@ -85,7 +85,7 @@
         "selectedIconPath": "/static/images/日历选中.png"
       },
       {
-        "pagePath": "pages/collectData/collectData",
+        "pagePath": "pages/share/share",
         "text": "分享",
         "iconPath": "/static/images/机器人图标.png",
         "selectedIconPath": "/static/images/机器人图标选中.png"
