@@ -35,6 +35,12 @@
       "style": {
         "navigationBarTitleText": "注册"
       }
+    },
+    {
+      "path": "pages/collectData/collectData",
+      "style": {
+        "navigationBarTitleText": "详情"
+      }
     }
   ],
   "globalStyle": {

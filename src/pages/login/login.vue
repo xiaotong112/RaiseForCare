@@ -1,39 +1,39 @@
 <template>
-	<view class="login-page">
+	<view class="relative h-screen w-screen overflow-hidden">
 		<!-- 背景装饰 -->
-		<view class="bg-decoration">
-			<image class="footprint footprint-1" src="/static/home/脚印.png@3x.png" mode="aspectFit" />
-			<image class="footprint footprint-2" src="/static/home/脚印.png@3x.png" mode="aspectFit" />
-			<image class="footprint footprint-3" src="/static/home/脚印.png@3x.png" mode="aspectFit" />
+		<view class="absolute inset-0">
+			<image class="footprint-1" src="/static/home/脚印.png@3x.png" mode="aspectFit" />
+			<image class="footprint-2" src="/static/home/脚印.png@3x.png" mode="aspectFit" />
+			<image class="footprint-3" src="/static/home/脚印.png@3x.png" mode="aspectFit" />
 		</view>
 		
 		<!-- 主要内容区域 -->
-		<view class="content-wrapper">
+		<view class="relative h-full flex flex-col items-center justify-start pt-[50%]">
 			<!-- Logo和欢迎语 -->
-			<view class="logo-section">
-				<view class="logo-container">
-					<image class="logo-image" src="/static/home/宝宝 (4).png@3x.png" mode="aspectFit" />
+			<view class="flex flex-col items-center -translate-y-[20%] pointer-events-auto">
+				<view class="flex items-center justify-center w-auto h-auto p-[20rpx]">
+					<image class="w-[40vw] h-[40vw]" src="/static/home/宝宝 (4).png@3x.png" mode="aspectFit" />
 				</view>
-				<text class="welcome-text">欢迎来到------!</text>
+				<text class="mt-[18rpx] text-[34rpx] text-[#111] font-semibold">欢迎来到------!</text>
 			</view>
 			
 			<!-- 登录按钮 -->
-			<view class="login-button-section">
+			<view class="w-[90%] flex justify-center mt-[36rpx] pointer-events-auto">
 				<button class="wechat-login-btn" open-type="getUserInfo" @getuserinfo="">
-					<image class="wechat-icon" src="/static/home/路径 1@3x.png" mode="aspectFit" />
-					<text class="btn-text">微信登录</text>
+					<image class="w-[56rpx] h-[56rpx] mr-[18rpx]" src="/static/home/路径 1@3x.png" mode="aspectFit" />
+					<text class="text-[34rpx] text-[#4a2317] font-semibold">微信登录</text>
 				</button>
 			</view>
 			
 			<!-- 协议勾选 -->
-			<view class="agreement-section">
+			<view class="p-[10rpx] w-[86%] max-w-[90%] mt-[18rpx] flex justify-center text-[#9b7b74] text-[24rpx]">
 				<checkbox-group @change="">
-					<label class="agreement-label">
+					<label class="flex items-center gap-[12rpx]">
 						<checkbox value="agree" :checked="isAgreed" color="#ff9999" style="transform:scale(0.8)" />
-						<text class="agreement-text">我已阅读并同意</text>
-						<text class="agreement-link" @click.stop="viewAgreement('user')">《用户协议》</text>
-						<text class="agreement-text">和</text>
-						<text class="agreement-link" @click.stop="viewAgreement('privacy')">《隐私政策》</text>
+						<text class="text-[#9b7b74]">我已阅读并同意</text>
+						<text class="text-[#ff8b88] mx-[6rpx]" @click.stop="viewAgreement('user')">《用户协议》</text>
+						<text class="text-[#9b7b74]">和</text>
+						<text class="text-[#ff8b88] mx-[6rpx]" @click.stop="viewAgreement('privacy')">《隐私政策》</text>
 					</label>
 				</checkbox-group>
 			</view>
@@ -48,69 +48,31 @@ let isAgreed = ref(true)
 </script>
 
 <style scoped lang="scss">
-.login-page{
-	position:relative;
-	height:100vh;
-	width: 100vw;
-	overflow: hidden;
-}
-.bg-decoration{
-	position:absolute;
-	inset: 0;
-}
-.footprint{
-	position:absolute;
+.footprint-1 { 
+	position: absolute;
 	width: 300rpx;
 	height: 300rpx;
+	left: -10%; 
+	top: 0%; 
+	transform: rotate(-10deg); 
 }
-.footprint-1 { left: -10%; top: 0%; transform: rotate(-10deg); }
-.footprint-2 { right: -30rpx; bottom: 50%; transform: rotate(10deg); }
-.footprint-3 { left: -10%; bottom: 10%; transform: rotate(30deg); }
-/* 主内容竖直布局，水平居中 */
-.content-wrapper{
-	position: relative;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;     
-	justify-content: flex-start;
-	padding-top: 50%;
+.footprint-2 { 
+	position: absolute;
+	width: 300rpx;
+	height: 300rpx;
+	right: -30rpx; 
+	bottom: 50%; 
+	transform: rotate(10deg); 
 }
-
-.logo-section{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	transform: translateY(-20%);
-	pointer-events: auto;
-}
-.logo-container{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: auto;
-	height: auto;
-	padding: 20rpx;
-}
-.logo-image{
-	width: 40vw;
-	height: 40vw;
+.footprint-3 { 
+	position: absolute;
+	width: 300rpx;
+	height: 300rpx;
+	left: -10%; 
+	bottom: 10%; 
+	transform: rotate(30deg); 
 }
 
-.welcome-text{
-	margin-top: 18rpx;
-	font-size: 34rpx;
-	color: #111;
-	font-weight: 600;
-}
-
-.login-button-section{
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	margin-top: 36rpx;
-	pointer-events: auto;
-}
 .wechat-login-btn{
 	width: 86%;
 	max-width: 90%;
@@ -127,38 +89,6 @@ let isAgreed = ref(true)
 	color: #4a2317;
 	font-size: 34rpx;
 }
-.wechat-login-btn .wechat-icon{
-	width: 56rpx;
-	height: 56rpx;
-	margin-right: 18rpx;
-}
-.wechat-login-btn .btn-text{
-	font-size: 34rpx;
-	color: #4a2317;
-	font-weight: 600;
-}
 
-.agreement-section{
-	padding: 10rpx;
-	width: 86%;
-	max-width: 90%;
-	margin-top: 18rpx;
-	display: flex;
-	justify-content: center;
-	color: #9b7b74;
-	font-size: 24rpx;
-}
-.agreement-label{
-	display: flex;
-	align-items: center;
-	gap: 12rpx;
-}
-.agreement-text{
-	color: #9b7b74;
-}
-.agreement-link{
-	color: #ff8b88;
-	margin: 0 6rpx;
-}
 
 </style>
