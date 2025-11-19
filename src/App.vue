@@ -21,12 +21,14 @@ export default {
   @apply flex flex-col items-center justify-center h-full w-full p-4;
 }
 
+:root,
 page {
-  background-color: #FFF5F0;
+  background-color: #fff5f0;
   min-height: 100vh;
+  --wot-color-theme: #ff9d8f;
 }
 
 page-body {
-  background-color: #FFF5F0;
+  background-color: #fff5f0;
 }
 </style>
