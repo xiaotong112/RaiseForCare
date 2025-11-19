@@ -28,7 +28,22 @@
     {
       "path": "pages/profile/profile",
       "style": {
-        "navigationBarTitleText": "我的"
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#FFF5F0"
+      }
+    },
+    {
+      "path": "pages/profile/personalInfo",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#FFF5F0"
+      }
+    },
+    {
+      "path": "pages/profile/childInfo",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#FFF5F0"
       }
     },
     {
@@ -46,7 +61,7 @@
     {
       "path": "pages/collectData/collectData",
       "style": {
-        "navigationBarTitleText": "详情"
+        "navigationBarTitleText": ""
       }
     }
   ],
@@ -83,7 +98,7 @@
         "selectedIconPath": "/static/images/机器人图标选中.png"
       },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/profile/profile",
         "text": "我的",
         "iconPath": "/static/images/我的.png",
         "selectedIconPath": "/static/images/我的选中.png"

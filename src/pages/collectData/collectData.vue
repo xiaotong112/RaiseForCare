@@ -47,6 +47,7 @@
 					v-model="personalInfo.retireDate"
 					containerClass=""
 				/>
+				<NextButton @click="nextStep" />
 			</view>
 
 			<!-- 财务信息表单 -->
@@ -78,6 +79,7 @@
 					v-model="financialInfo.targetRetirement"
 					containerClass=""
 				/>
+				<NextButton @click="nextStep" />
 			</view>
 
 			<!-- 孩子信息表单 -->
@@ -93,12 +95,22 @@
 					placeholder="请输入孩子姓名"
 					v-model="childInfo.name"
 				/>
+				<GenderRadio
+					label="性别"
+					v-model="personalInfo.gender"
+				/>
 
+				<DatePicker
+					label="出生日期"
+					placeholder="1997年12月24日"
+					v-model="personalInfo.birthday"
+				/>
 				<AvatarSelector
 					label="选择宝宝形象"
 					v-model="childInfo.avatar"
 					@upload="uploadAvatar"
 				/>
+				<NextButton @click="nextStep" />
 			</view>
 
 			<!-- 邀请伴侣表单 -->
@@ -116,14 +128,18 @@
 					containerClass="mb-[40rpx]"
 				/>
 
-				<button class="w-full h-[88rpx] bg-primary rounded-[44rpx] text-white text-[32rpx] font-semibold flex items-center justify-center mb-[24rpx]"
-					@click="sendInvite">
-					发送邀请
-				</button>
-
-				<view class="text-center">
-					<text class="text-[28rpx] text-[#999]">完成收集跳入首页</text>
-				</view>
+				<NextButton 
+					text="发送邀请" 
+					roundedClass="rounded-[44rpx]" 
+					textSizeClass="text-[32rpx]" 
+					@click="sendInvite" 
+				/>
+				<NextButton 
+					text="完成收集跳入首页" 
+					roundedClass="rounded-[44rpx]" 
+					textSizeClass="text-[32rpx]" 
+					@click="complete" 
+				/>
 			</view>
 		</view>
 	</view>
@@ -136,6 +152,7 @@ import FormInput from './components/FormInput.vue'
 import GenderRadio from './components/GenderRadio.vue'
 import DatePicker from './components/DatePicker.vue'
 import AvatarSelector from './components/AvatarSelector.vue'
+import NextButton from './components/NextButton.vue'
 
 const currentStep = ref(0)
 

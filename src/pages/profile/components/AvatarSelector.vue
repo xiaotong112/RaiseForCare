@@ -6,16 +6,19 @@
 				<view 
 					v-for="avatar in avatars" 
 					:key="avatar.value"
-					class="w-[180rpx] h-[180rpx] bg-[#FFF5F0] rounded-[24rpx] flex items-center justify-center relative border-4"
+					class="w-[200rpx] h-[200rpx] bg-[#FFF5F0] rounded-[24rpx] flex items-center justify-center relative border-4"
 					:class="modelValue === avatar.value ? 'border-primary' : 'border-transparent'"
 					@click="handleSelect(avatar.value)">
 					<image class="w-[160rpx] h-[160rpx]" :src="avatar.src" mode="aspectFit" />
 				</view>
-				<view 
-				class="w-[180rpx] h-[180rpx] bg-[#FFF5F0] rounded-[24rpx] flex flex-col items-center justify-center border-4 border-dashed border-[#E5E5E5]"
+			</view>
+		</view>
+
+		<view v-if="showUpload" class="flex justify-center">
+			<view 
+				class="w-[200rpx] h-[200rpx] bg-[#FFF5F0] rounded-[24rpx] flex flex-col items-center justify-center border-4 border-dashed border-[#E5E5E5]"
 				@click="handleUpload">
 				<text class="text-[80rpx] text-[#D9D9D9] mb-[8rpx]">+</text>
-			</view>
 			</view>
 		</view>
 	</view>
