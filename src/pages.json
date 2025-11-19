@@ -21,7 +21,22 @@
     {
       "path": "pages/profile/profile",
       "style": {
-        "navigationBarTitleText": "我的"
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#FFF5F0"
+      }
+    },
+    {
+      "path": "pages/profile/personalInfo",
+      "style": {
+        "navigationBarTitleText": "消息编辑",
+        "navigationBarBackgroundColor": "#FFF5F0"
+      }
+    },
+    {
+      "path": "pages/profile/childInfo",
+      "style": {
+        "navigationBarTitleText": "我的孩子",
+        "navigationBarBackgroundColor": "#FFF5F0"
       }
     },
     {
@@ -76,7 +91,7 @@
         "selectedIconPath": "/static/images/机器人图标选中.png"
       },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/profile/profile",
         "text": "我的",
         "iconPath": "/static/images/我的.png",
         "selectedIconPath": "/static/images/我的选中.png"
