@@ -21,6 +21,11 @@ export default {
 }
 
 page {
-  background: linear-gradient(to bottom right, #fff8e8, #ffe8d8, #fff8e8);
+  background-color: #FFF5F0;
+  min-height: 100vh;
+}
+
+page-body {
+  background-color: #FFF5F0;
 }
 </style>
