@@ -1,10 +1,5 @@
 <template>
 	<view class="bg-gradient-to-r from-[#FFB4AA] to-[#FF9D8F] rounded-[24rpx] p-[32rpx] relative overflow-hidden w-full">
-		<!-- 编辑图标 -->
-		<view class="absolute top-[24rpx] right-[24rpx] w-[48rpx] h-[48rpx] bg-white/30 rounded-full flex items-center justify-center"
-			@click="handleEdit">
-		</view>
-
 		<!-- 金额显示 -->
 		<view class="mb-[24rpx] flex items-center ">
 			<text class="text-[24rpx] text-white/90 block mb-[8rpx]">¥</text>
@@ -40,7 +35,7 @@ const props = defineProps({
 	},
 	timeRemaining: {
 		type: String,
-		default: '距离该伙伴制15年28天'
+		default: '距离退休还剩15年28天'
 	},
 	progressPercent: {
 		type: Number,

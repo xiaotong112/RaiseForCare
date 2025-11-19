@@ -70,13 +70,13 @@
         "selectedIconPath": "/static/images/日历选中.png"
       },
       {
-        "pagePath": "pages/share/share",
+        "pagePath": "pages/collectData/collectData",
         "text": "分享",
         "iconPath": "/static/images/机器人图标.png",
         "selectedIconPath": "/static/images/机器人图标选中.png"
       },
       {
-        "pagePath": "pages/profile/profile",
+        "pagePath": "pages/login/login",
         "text": "我的",
         "iconPath": "/static/images/我的.png",
         "selectedIconPath": "/static/images/我的选中.png"
