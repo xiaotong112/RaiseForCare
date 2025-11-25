@@ -5,8 +5,8 @@ import { get, post, put, del, upload } from "../utils/request";
  * @param {Object} data - 登录数据
  * @param {string} data.code - 微信登录凭证
  */
-export const login = (data) => {
-  return post("/user/login", data);
+export const login = (code) => {
+  return post("/user/login", { code });
 };
 
 /**

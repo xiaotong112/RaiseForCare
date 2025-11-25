@@ -2,7 +2,7 @@
  * 网络请求工具函数
  * 基于 uni.request 封装
  */
-const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://531b751e.r10.cpolar.top/api";
 
 // 请求超时时间
 const TIMEOUT = 10000;
@@ -103,6 +103,7 @@ const request = (options = {}) => {
     uni.request({
       ...config,
       success: (response) => {
+        console.log("response", response);
         // 响应拦截
         responseInterceptor(response)
           .then((res) => resolve(res))

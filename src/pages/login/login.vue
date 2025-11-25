@@ -142,46 +142,32 @@ const handleWechatLogin = async (e) => {
     });
   };
 
-  try {
-    // 获取微信登录凭证
-    const loginRes = await uniLogin();
-    const code = loginRes.code;
+  // 获取微信登录凭证
+  const loginRes = await uniLogin();
+  const code = loginRes.code;
 
-    // 调用后端登录接口
-    const response = await login({ code });
-
-    // 处理登录成功
-    if (response && response.token) {
-      userStore.setToken(response.token);
-      userStore.setUserInfo(response.userInfo);
-
+  // 调用后端登录接口
+  uni.request({
+    url: "https://531b751e.r10.cpolar.top/api/user/login",
+    method: "POST",
+    data: {
+      code: code,
+    },
+    success: (res) => {
+      console.log("后端登录响应数据:", res.data);
+    },
+    fail: (error) => {
+      console.error("后端登录请求失败:", error);
       uni.showToast({
-        title: "登录成功",
-        icon: "success",
-        duration: 2000,
-        mask: true,
+        title: "登录请求失败，请检查网络",
+        icon: "error",
+        duration: 3000,
       });
-
-      // 延迟跳转，确保用户看到登录成功提示
-      setTimeout(() => {
-        uni.switchTab({
-          url: "/pages/home/home",
-        });
-      }, 1500);
-    } else {
-      throw new Error("登录失败，服务器未返回有效数据");
-    }
-  } catch (error) {
-    console.error("登录过程出错:", error);
-    uni.showToast({
-      title: error.message || "登录失败，请重试",
-      icon: "error",
-      duration: 3000,
-      mask: true,
-    });
-  } finally {
-    isLoading.value = false;
-  }
+    },
+    complete: () => {
+      isLoading.value = false;
+    },
+  });
 };
 
 /**
