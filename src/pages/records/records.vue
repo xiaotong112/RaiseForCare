@@ -8,7 +8,7 @@
       </block>
     </wd-tabs>
     <calendar />
-
+    <demo />
     <view class="border-card w-full">框测试</view>
     <button class="btn-primary w-full">按钮</button>
   </view>
@@ -17,6 +17,7 @@
 <script setup>
 import { ref } from "vue";
 import calendar from "./components/calendar.vue";
+import demo from "./components/demo.vue";
 const tab = ref(0);
 </script>
 
