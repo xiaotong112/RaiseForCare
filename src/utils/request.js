@@ -2,7 +2,7 @@
  * 网络请求工具函数
  * 基于 uni.request 封装
  */
-const BASE_URL = "https://531b751e.r10.cpolar.top/api";
+const BASE_URL = "http://459751f5.r10.cpolar.top/api";
 
 // 请求超时时间
 const TIMEOUT = 10000;
@@ -40,8 +40,8 @@ const responseInterceptor = (response) => {
   // HTTP状态码判断
   if (statusCode === 200) {
     // 根据后端返回的数据结构调整
-    if (data.code === 0 || data.code === 200) {
-      return data.data || data;
+    if (data.code === 0 || data.code === 200 || data.code === "200") {
+      return Promise.resolve(data.data || data);
     } else {
       // 业务错误
       uni.showToast({

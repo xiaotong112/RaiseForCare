@@ -35,13 +35,21 @@ export const useUserStore = defineStore("user", {
 
     // 登录成功
     login(loginData) {
-      const { token, userInfo } = loginData;
+      const { token, openid, isNewUser, userId } = loginData;
       this.setToken(token);
-      this.setUserInfo(userInfo);
-      // 同步到本地存储
-      if (userInfo) {
-        uni.setStorageSync("userInfo", JSON.stringify(userInfo));
+      this.openid = openid;
+      this.isNewUser = isNewUser;
+      
+      // 如果没有详细用户信息，至少存个ID
+      if (!this.userInfo) {
+        this.userInfo = { id: userId };
+      } else {
+        this.userInfo.id = userId;
       }
+      
+      // 同步到本地存储
+      uni.setStorageSync("userInfo", JSON.stringify(this.userInfo));
+      if (openid) uni.setStorageSync("openid", openid);
     },
 
     // 退出登录

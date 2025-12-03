@@ -94,7 +94,7 @@
 <script setup>
 import { ref } from "vue";
 import { login } from "@/api/login";
-import { useUserStore } from "@/store/index";
+import { useUserStore } from "@/store/user.js";
 
 const userStore = useUserStore();
 
@@ -143,31 +143,40 @@ const handleWechatLogin = async (e) => {
   };
 
   // 获取微信登录凭证
-  const loginRes = await uniLogin();
-  const code = loginRes.code;
+  try {
+    const loginRes = await uniLogin();
+    const code = loginRes.code;
 
-  // 调用后端登录接口
-  uni.request({
-    url: "https://531b751e.r10.cpolar.top/api/user/login",
-    method: "POST",
-    data: {
-      code: code,
-    },
-    success: (res) => {
-      console.log("后端登录响应数据:", res.data);
-    },
-    fail: (error) => {
-      console.error("后端登录请求失败:", error);
-      uni.showToast({
-        title: "登录请求失败，请检查网络",
-        icon: "error",
-        duration: 3000,
+    // 调用后端登录接口
+    const res = await login(code);
+    console.log("登录成功:", res);
+
+    // 更新 store
+    userStore.login(res);
+
+    uni.showToast({
+      title: "登录成功",
+      icon: "success",
+      duration: 1500,
+    });
+
+    // 延迟跳转
+    setTimeout(() => {
+      uni.switchTab({
+        url: "/pages/home/home",
       });
-    },
-    complete: () => {
-      isLoading.value = false;
-    },
-  });
+    }, 1500);
+
+  } catch (error) {
+    console.error("登录失败:", error);
+    uni.showToast({
+      title: error.message || "登录失败",
+      icon: "none",
+      duration: 3000,
+    });
+  } finally {
+    isLoading.value = false;
+  }
 };
 
 /**
