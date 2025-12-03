@@ -127,7 +127,7 @@ const posts = ref([
 const messages = ref([
 	{
 		isUser: false,
-		avatar: '/static/home/机器人图标.png',
+		avatar: '/static/images/机器人.png',
 		name: 'AI育儿助手',
 		time: '09:00',
 		content: '你好！我是AI育儿助手，很高兴为你服务。你可以问我任何关于育儿、教育和理财规划的问题。'
@@ -187,7 +187,7 @@ const sendMessage = () => {
 	setTimeout(() => {
 		messages.value.push({
 			isUser: false,
-			avatar: '/static/home/机器人图标.png',
+			avatar: '/static/images/机器人.png',
 			name: 'AI育儿助手',
 			time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
 			content: `关于"${question}"，建议您可以尝试以下方法...`
